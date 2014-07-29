@@ -49,8 +49,8 @@ namespace WpfDrawDemo
             this.AllowsTransparency = true;
 
             //set window size
-            this.Width = SystemParameters.PrimaryScreenWidth - 200;
-            this.Height = SystemParameters.PrimaryScreenHeight - 200;
+            this.Width = SystemParameters.PrimaryScreenWidth;
+            this.Height = SystemParameters.PrimaryScreenHeight;
             drawingAreaR = (int)this.Width;
             drawingAreaB = (int)this.Height;
 
@@ -154,6 +154,10 @@ namespace WpfDrawDemo
 
         void CompositionTarget_Rendering(object sender, EventArgs e)
         {
+            /**********************************************
+            you can switch the two methods below to see the performance difference 
+            **********************************************/
+
             //Draw_ClearEveryFrame();
             Draw_ByCaching();
         }
